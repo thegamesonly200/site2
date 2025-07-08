@@ -204,20 +204,7 @@
   z-index: 100;
   transition: all 0.5s ease;
 }
-    linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, transparent 25%);
-  pointer-events: none;
-  z-index: 5;
-}
 
-/* Alex Character - Properly positioned on floor */
-.isometric-character {
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%) translateZ(10px);
-  z-index: 100;
-  transition: all 0.5s ease;
-}
 
 .alex-sprite-isometric {
   width: 40px;
