@@ -93,7 +93,7 @@
 /* Back wall - properly connected to floor */
 .isometric-wall-back {
   position: absolute;
-  top: 0;
+  bottom: 50%;
   left: 50%;
   transform: translateX(-50%) rotateX(90deg);
   width: 80%;
@@ -147,7 +147,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 50%;
   background: 
     /* Main light source from top-left */
     radial-gradient(ellipse at 25% 15%, rgba(255,255,255,0.25) 0%, transparent 60%),
@@ -155,7 +155,7 @@
     radial-gradient(ellipse at 75% 25%, rgba(255,255,200,0.15) 0%, transparent 70%),
     /* Floor reflection */
     linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, transparent 25%);
-  pointer-events: none;
+  transform: perspective(400px) rotateX(-30deg);
   z-index: 5;
 }
 
@@ -213,10 +213,10 @@
 .alex-sprite-isometric::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 25%;
+  left: -25%;
+  width: 50%;
+  height: 50%;
   background: 
     /* Head */
     radial-gradient(circle at 20px 12px, #fdbcb4 0%, #fdbcb4 6px, transparent 6px),
@@ -472,23 +472,23 @@
   0%, 100% { opacity: 0.6; transform: translateY(0px); }
   50% { opacity: 1; transform: translateY(-2px); }
 }
-/* Realistic Isometric Objects Base */
-.isometric-object {
+  transform: perspective(400px) rotateY(-45deg) skewY(30deg);
+  transform-origin: bottom right;
   position: absolute;
   transform-style: preserve-3d;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   z-index: 50;
-}
-
-.isometric-object:hover {
-  transform: translateZ(8px) scale(1.05);
+  bottom: 25%;
+  right: -25%;
+  width: 50%;
+  height: 50%;
   filter: brightness(1.2) drop-shadow(0 5px 15px rgba(16, 185, 129, 0.4));
 }
 
 .isometric-object.used {
-  filter: grayscale(0.6) brightness(0.7) opacity(0.8);
-  cursor: not-allowed;
+  transform: perspective(400px) rotateY(45deg) skewY(-30deg);
+  transform-origin: bottom left;
 }
 
 /* Realistic Shadows */
@@ -504,9 +504,11 @@
   z-index: -1;
 }
 
-/* Completion Indicators */
+  transform: perspective(400px) rotateX(45deg);
 .isometric-completion {
   position: absolute;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
   top: -15px;
   right: -8px;
   width: 16px;
