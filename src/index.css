@@ -93,69 +93,52 @@
 /* Back wall - properly connected to floor */
 .isometric-wall-back {
   position: absolute;
-  bottom: 50px;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%) translateZ(-150px) rotateX(0deg);
-  width: 300px;
-  height: 200px;
-  background: linear-gradient(to bottom, 
-    #d4c5b9 0%, 
-    #c9b8a8 20%, 
-    #b8a082 40%, 
-    #a0845c 60%, 
-    #8b7355 80%, 
-    #6b5b47 100%);
-  border: 3px solid rgba(107, 91, 71, 0.9);
-  border-bottom: none;
-  box-shadow: 
-    inset 0 0 50px rgba(0,0,0,0.15),
-    0 5px 15px rgba(0,0,0,0.3);
+  transform: translateX(-50%) rotateX(90deg);
+  width: 80%;
+  height: 60%;
+  background: linear-gradient(135deg, 
+    rgba(100, 116, 139, 0.3) 0%, 
+    rgba(71, 85, 105, 0.4) 50%, 
+    rgba(51, 65, 85, 0.5) 100%
+  );
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  z-index: 1;
 }
 
 /* Right wall - properly connected to floor and back wall */
 .isometric-wall-right {
   position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%) translateZ(-150px) rotateY(-90deg) translateZ(150px) rotateX(0deg);
-  width: 300px;
-  height: 200px;
-  background: linear-gradient(to bottom, 
-    #c9b8a8 0%, 
-    #b8a082 20%, 
-    #9d8266 40%, 
-    #8b7355 60%, 
-    #6b5b47 80%, 
-    #5a4a37 100%);
-  border: 3px solid rgba(90, 74, 55, 0.9);
-  border-bottom: none;
-  border-left: none;
-  box-shadow: 
-    inset 0 0 50px rgba(0,0,0,0.2),
-    0 5px 15px rgba(0,0,0,0.3);
+  top: 0;
+  right: 0;
+  transform: rotateY(45deg) rotateX(90deg);
+  width: 60%;
+  height: 60%;
+  background: linear-gradient(-45deg, 
+    rgba(71, 85, 105, 0.4) 0%, 
+    rgba(51, 65, 85, 0.5) 50%, 
+    rgba(30, 41, 59, 0.6) 100%
+  );
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  z-index: 1;
 }
 
 /* Left wall - creating enclosed space */
 .isometric-wall-left {
   position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%) translateZ(-150px) rotateY(90deg) translateZ(-150px) rotateX(0deg);
-  width: 300px;
-  height: 200px;
-  background: linear-gradient(to bottom, 
-    #b8a082 0%, 
-    #a0845c 20%, 
-    #9d8266 40%, 
-    #8b7355 60%, 
-    #6b5b47 80%, 
-    #5a4a37 100%);
-  border: 3px solid rgba(90, 74, 55, 0.9);
-  border-bottom: none;
-  border-right: none;
-  box-shadow: 
-    inset 0 0 50px rgba(0,0,0,0.2),
-    0 5px 15px rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  transform: rotateY(-45deg) rotateX(90deg);
+  width: 60%;
+  height: 60%;
+  background: linear-gradient(45deg, 
+    rgba(71, 85, 105, 0.4) 0%, 
+    rgba(51, 65, 85, 0.5) 50%, 
+    rgba(30, 41, 59, 0.6) 100%
+  );
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  z-index: 1;
 }
 
 /* Enhanced Realistic Lighting with proper shadows */
